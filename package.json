@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "@acme/monorepo",
+  "scripts": {
+    "lint": "turbo lint",
+    "test": "turbo test",
+
+    "web:dev": "pnpm -r --filter poolkhoord run web:dev",
+    "web:stage": "pnpm -r --filter poolkhoord run web:stage",
+    "web:production": "pnpm -r --filter poolkhoord run web:production",
+    "web:build:dev": "pnpm -r --filter poolkhoord run web:build:dev",
+    "web:build:stage": "pnpm -r --filter poolkhoord run web:build:stage",
+    "web:build:production": "pnpm -r --filter poolkhoord run web:build:production",
+    "web:serve": "pnpm -r --filter poolkhoord run web:serve",
+
+    "android:dev": "pnpm -r --filter poolkhoord run android:dev",
+    "android:stage": "pnpm -r --filter poolkhoord run android:stage",
+    "android:production": "pnpm -r --filter poolkhoord run android:production",
+    "android:build-dev": "pnpm -r --filter poolkhoord run  android:build:dev",
+    "android:build-stage": "pnpm -r --filter poolkhoord run android:build:stage",
+    "android:build-production": "pnpm -r --filter poolkhoord run android:build:production"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5",
+    "cross-env":"^7.0.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@babel/*",
+        "expo-modules-*",
+        "typescript"
+      ]
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
