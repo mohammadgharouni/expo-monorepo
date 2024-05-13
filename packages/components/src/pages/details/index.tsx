@@ -1,8 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
-import { View, StyleSheet, Pressable, Text, FlatList } from 'react-native';
+import { i18nInstance } from 'core/src/i18n';
+import { useTranslation } from 'react-i18next';
+import { View, StyleSheet, Pressable, Text } from 'react-native';
 export function HomeScreen({}) {
   const navigation = useNavigation();
-
+  const { t } = useTranslation();
+  const changeLang = async (lang: 'fa' | 'en') => {
+    i18nInstance.changeLanguage(lang);
+  };
   return (
     <View style={styles.container}>
       <Pressable
@@ -25,6 +30,7 @@ export function HomeScreen({}) {
           justifyContent: 'center',
           alignItems: 'center',
         }}
+        onPress={() => changeLang('fa')}
       >
         <Text>fa</Text>
       </Pressable>
@@ -36,10 +42,11 @@ export function HomeScreen({}) {
           justifyContent: 'center',
           alignItems: 'center',
         }}
+        onPress={() => changeLang('en')}
       >
         <Text>en</Text>
       </Pressable>
-      <Text>i18n : </Text>
+      <Text>i18n : {t('test')}</Text>
     </View>
   );
 }
