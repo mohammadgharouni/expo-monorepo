@@ -5,7 +5,7 @@ import { StyleSheet, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Paragraph style={{ fontSize: 64 }}>hiiii</Paragraph>
+      <Paragraph style={{ fontSize: 64 }}>hiiii 3</Paragraph>
       <StatusBar style="auto" />
     </View>
   );

@@ -1,22 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require("path");
-const fs = require("fs");
-const dotenv = require("dotenv");
+const dotenv = require('dotenv');
+const fs = require('fs');
+const path = require('path');
 const resolvePath = (relativePath) => path.resolve(__dirname, relativePath);
-const isProduction = process.argv.indexOf("--production") !== -1;
-const isStage = process.argv.indexOf("--stage") !== -1;
+const isProduction = process.argv.indexOf('--production') !== -1;
+const isStage = process.argv.indexOf('--stage') !== -1;
 const isDev = !isStage && !isProduction;
-const envPath = isDev
-  ? ".env.development"
-  : isStage
-  ? ".env.test"
-  : ".env.production";
+const envPath = isDev ? '.env.development' : isStage ? '.env.test' : '.env.production';
 
 const { parsed } = dotenv.config({ path: envPath });
 const EXPO_PUBLIC_API_URL = `"${parsed.EXPO_PUBLIC_API_URL}"`;
 
 fs.writeFileSync(
-  resolvePath("../env.js"),
+  resolvePath('../env.js'),
   `
   var __STAGE__ = ${isStage};
   var __DEVELOP__ = ${isDev};

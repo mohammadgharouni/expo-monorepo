@@ -1,35 +1,65 @@
 {
   "expo": {
-    "name": "expo-monorepo",
-    "slug": "expo-monorepo",
+    "name": "my-app",
+    "slug": "my-app",
+    "scheme": "poolkhord",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splashWhite.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
+      "backgroundColor": "#FFF",
+      "dark": {
+        "image": "./assets/splashBlack.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#000"
+   }
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "com.bycedric.expomonorepo",
-      "buildNumber": "1.0.0",
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.poolkhoord"
     },
     "android": {
-      "package": "com.bycedric.expomonorepo",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.poolkhoord"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "43a0e80a-a5e6-433b-871d-ebb3d3d5ee99"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/IRANYekanFN.ttf",
+            "./assets/fonts/IRANYekanFN_bold.ttf",
+            "./assets/fonts/IRANYekanFN_light.ttf",
+            "./assets/fonts/IRANYekanFN_medium.ttf"
+          ]
+        }
+      ]
+     
+    ]
   }
 }

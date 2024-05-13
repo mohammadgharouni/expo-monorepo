@@ -29,6 +29,9 @@ importers:
       expo:
         specifier: ^51.0.1
         version: 51.0.2(@babel/core@7.24.5)
+      expo-build-properties:
+        specifier: ^0.12.1
+        version: 0.12.1(expo@51.0.2)
       expo-dev-client:
         specifier: ~4.0.12
         version: 4.0.13(expo@51.0.2)
@@ -4945,6 +4948,16 @@ packages:
       md5-file: 3.2.3
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /expo-build-properties@0.12.1(expo@51.0.2):
+    resolution: {integrity: sha512-gn8sngNmOHkbJ5Kt3mKcKg+Wl6+d0m70gg9OllRIVeDkvZqCObKfnSM4tAQWiJhm62sHnL8udfYnuArnKhQd/g==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      ajv: 8.11.0
+      expo: 51.0.2(@babel/core@7.24.5)
+      semver: 7.6.2
     dev: false
 
   /expo-constants@16.0.1(expo@51.0.2):
