@@ -1,12 +1,11 @@
 import { Paragraph } from 'components';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-
+import AppContainer from 'components/src/app';
 export default function App() {
   return (
     <View style={styles.container}>
       <Paragraph style={{ fontSize: 64 }}>hiiii 3</Paragraph>
-      <StatusBar style="auto" />
+      <AppContainer />
     </View>
   );
 }
